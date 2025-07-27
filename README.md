@@ -45,3 +45,7 @@ The terraform module does the following
 - creates the zip file for the lambda function
 - creates all AWS resources (lambda, S3 for the application to store files, IAM for lambda to access S3)
 - cleans up the cloned repo after lambda has been created
+
+### Improvements
+- Feature to be able to create lambdas for any language by reading function file extension. It only works for Lambdas
+- Add authentication in `git clone` step for private repos. 
