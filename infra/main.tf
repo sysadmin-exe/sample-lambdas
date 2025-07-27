@@ -5,13 +5,13 @@ terraform {
       source  = "hashicorp/aws"
       version = "6.5.0"
     }
-    null_resource = {
+    null = {
       source  = "hashicorp/null"
-      version = "3.1.0"
+      version = "3.2.4"
     }
-    archive_file = {
+    archive = {
       source  = "hashicorp/archive"
-      version = "3.1.0"
+      version = "2.7.1"
     }
   }
 }
@@ -32,5 +32,5 @@ module "lambda_functions" {
   source   = "./modules/lambda_function"
   for_each = toset(var.lambda_functions)
 
-  function_name = each.value.name
+  function_name = each.value
 }
